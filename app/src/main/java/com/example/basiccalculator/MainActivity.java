@@ -2,20 +2,33 @@ package com.example.basiccalculator;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
+import androidx.appcompat.widget.Toolbar;
+
 import org.mariuszgromada.math.mxparser.*;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.SpannableStringBuilder;
 import android.view.View;
+import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.ToggleButton;
+
 
 public class MainActivity extends AppCompatActivity {
     private EditText display;
+    private ToggleButton toggleButton;
+    private Toolbar toolbar;
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        toolbar=findViewById(R.id.myToolBar);
+
+        setSupportActionBar(toolbar);
+
 
         display= findViewById(R.id.textView);
         display.setShowSoftInputOnFocus(false);
@@ -28,7 +41,21 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+        toggleButton=findViewById(R.id.toggleButton);
+        toggleButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    // The toggle is enabled
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                } else {
+                    // The toggle is disabled
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                }
+            }
+        });
     }
+     //android:theme="@style/Theme.BasicCalculator"
 
     private  void updateText(String strToAdd){
         String oldStr= display.getText().toString();
@@ -72,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void plusMinusBTN(View view){
-        updateText("-");
+        updateText("%");
 
     }
     public void addBTN(View view){

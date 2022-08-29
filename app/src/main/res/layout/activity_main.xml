@@ -6,6 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <include
+        layout="@layout/appbar"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="12dp" />
+
     <TableLayout
         android:id="@+id/tableLayout"
         android:layout_width="match_parent"
@@ -31,21 +36,7 @@
                 android:text="@string/clear"
                 android:textColor="#FFFFFF"
                 android:textSize="24sp"
-                app:backgroundTint="#A6A39F" />
-
-            <Button
-                android:id="@+id/parenthesesBTN"
-                style="@style/Widget.AppCompat.Button.Borderless"
-                android:layout_width="0dp"
-                android:layout_height="90dp"
-                android:layout_margin="5dp"
-                android:layout_weight="1"
-                android:background="@drawable/circle"
-                android:onClick="parenthesesBTN"
-                android:text="@string/parentheses"
-                android:textColor="#FFFFFF"
-                android:textSize="24sp"
-                app:backgroundTint="#A6A39F" />
+                app:backgroundTint="#E18703" />
 
             <Button
                 android:id="@+id/exponentBTN"
@@ -60,6 +51,20 @@
                 android:textColor="#FFFFFF"
                 android:textSize="24sp"
                 app:backgroundTint="#A6A39F" />
+            <Button
+                android:id="@+id/plusMinusBTN"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="0dp"
+                android:layout_height="90dp"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/circle"
+                android:onClick="plusMinusBTN"
+                android:text="@string/plusMinus"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp"
+                app:backgroundTint="#A6A39F"
+                />
 
             <Button
                 android:id="@+id/divideBTN"
@@ -73,7 +78,7 @@
                 android:text="@string/divide"
                 android:textColor="#FFFFFF"
                 android:textSize="24sp"
-                app:backgroundTint="#E18703" />
+                app:backgroundTint="#A6A39F" />
         </TableRow>
 
         <TableRow
@@ -92,7 +97,7 @@
                 android:text="@string/seven"
                 android:textColor="#FFFFFF"
                 android:textSize="24sp"
-                app:backgroundTint="#6C00F8" />
+                 />
 
             <Button
                 android:id="@+id/eightBTN"
@@ -131,7 +136,9 @@
                 android:onClick="multiplyBTN"
                 android:text="@string/multiply"
                 android:textColor="#FFFFFF"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                app:backgroundTint="#A6A39F"
+                />
         </TableRow>
 
         <TableRow
@@ -188,7 +195,9 @@
                 android:onClick="subtractBTN"
                 android:text="@string/subtract"
                 android:textColor="#FFFFFF"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                app:backgroundTint="#A6A39F"
+                />
 
         </TableRow>
 
@@ -246,7 +255,9 @@
                 android:onClick="addBTN"
                 android:text="@string/add"
                 android:textColor="#FFFFFF"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                app:backgroundTint="#A6A39F"
+                />
 
         </TableRow>
 
@@ -254,18 +265,20 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+
             <Button
-                android:id="@+id/plusMinusBTN"
+                android:id="@+id/parenthesesBTN"
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="90dp"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle"
-                android:onClick="plusMinusBTN"
-                android:text="@string/plusMinus"
+                android:onClick="parenthesesBTN"
+                android:text="@string/parentheses"
                 android:textColor="#FFFFFF"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                />
 
             <Button
                 android:id="@+id/zeroBTN"
@@ -306,7 +319,9 @@
                 android:onClick="equalBTN"
                 android:text="@string/equals"
                 android:textColor="#FFFFFF"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                app:backgroundTint="#E18703"
+                />
 
 
         </TableRow>
@@ -316,32 +331,35 @@
         android:id="@+id/textView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="60dp"
+        android:autofillHints="false"
+        android:gravity="end"
+        android:inputType="none"
         android:text="@string/display"
+        android:textAlignment="textEnd"
+        android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:autofillHints="false"
-        android:inputType="none"
-        android:textSize="36sp"
-        android:textAlignment="textEnd"
-        tools:ignore="LabelFor"
-        android:gravity="end"
-        />
+        tools:ignore="LabelFor" />
 
     <ImageButton
         android:id="@+id/backspaceBTN"
         style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_margin="0dp"
         android:background="@drawable/circle"
         android:contentDescription="@drawable/backspace"
         android:onClick="backspaceBTN"
         android:text="@string/backspace"
+        android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/tableLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintHorizontal_bias="0.953"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/backspace" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

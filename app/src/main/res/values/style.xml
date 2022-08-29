@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="myTog">
+        <item name="backgroundTint">@color/teal_700</item>
+        <item name="android:textColor">@color/white</item>
+
+    </style>
+
+
+</resources>

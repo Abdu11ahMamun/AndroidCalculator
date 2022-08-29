@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name" translatable="false">BasicCalculator</string>
+    <string name="app_name" translatable="false">Hululu Calculator</string>
 
     <string name="zero">0</string>
     <string name="one">1</string>
@@ -20,7 +20,7 @@
     <string name="multiply">×</string>
     <string name="add">+</string>
     <string name="subtract">-</string>
-    <string name="plusMinus">±</string>
+    <string name="plusMinus">%</string>
     <string name="point">.</string>
     <string name="equals">=</string>
 
