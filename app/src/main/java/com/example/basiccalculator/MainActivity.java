@@ -2,7 +2,7 @@ package com.example.basiccalculator;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
-
+import org.mariuszgromada.math.mxparser.*;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.SpannableStringBuilder;
@@ -52,18 +52,31 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void pointBTN(View view){
+        updateText(".");
 
 
     }
     public void equalBTN(View view){
+        String userExp= display.getText().toString();
+
+        userExp= userExp.replaceAll("÷","/");
+        userExp= userExp.replaceAll("×","/");
+
+        Expression exp= new Expression(userExp); //it will cal the ans
+        String result= String.valueOf(exp.calculate());
+        display.setText(result);
+
+        //setting the cursor
+        display.setSelection(result.length());
 
 
     }
     public void plusMinusBTN(View view){
-
+        updateText("-");
 
     }
     public void addBTN(View view){
+        updateText("+");
 
 
     }
@@ -83,43 +96,52 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void subtractBTN(View view){
+        updateText("-");
 
 
     }
     public void sixBTN(View view){
+        updateText("6");
 
 
     }
     public void fiveBTN(View view){
+        updateText("5");
+
 
 
     }
     public void fourBTN(View view){
+        updateText("4");
 
 
     }
     public void multiplyBTN(View view){
+        updateText("*");
 
 
     }
     public void nineBTN(View view){
+        updateText("9");
 
 
     }
     public void eightBTN(View view){
+        updateText("8");
 
 
     }
     public void sevenBTN(View view){
+        updateText("7");
 
 
     }
     public void divideBTN(View view){
-
+        updateText("/");
 
     }
     public void exponentBTN(View view){
-
+        updateText("^");
 
     }
     public void parenthesesBTN(View view){
